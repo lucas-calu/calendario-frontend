@@ -22,6 +22,10 @@
     background-color: #A2B5CD;
 }
 
+.divItemDaLista{
+    display: flex;
+    flex-direction: row;
+}
 
 
 .divInterior2{
@@ -42,4 +46,23 @@ button{
     border-radius: 5px;
     margin-top: 15px;
     background-color: #87CEEB;
+}
+
+ul{
+    display: grid;
+    list-style: none;
+    gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+#botaoEditar{
+    width: 60px;
+    height: 20px;
+    background-color: #1E90FF;
+}
+
+#botaoDeletar{
+    width: 60px;
+    height: 20px;
+    background-color: #EE2C2C;
 }

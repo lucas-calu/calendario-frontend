@@ -58,11 +58,20 @@ ul{
 #botaoEditar{
     width: 60px;
     height: 20px;
+    margin-top: 0px;
+    margin-left: 5px;
     background-color: #1E90FF;
 }
 
 #botaoDeletar{
     width: 60px;
     height: 20px;
+    margin-top: 0px;
+    margin-left: 5px;
     background-color: #EE2C2C;
+}
+
+h3{
+    display: flex;    
+    justify-content: center;
 }

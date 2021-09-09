@@ -1,7 +1,7 @@
 import { useState,useEffect } from 'react';
 import './styles.css';
 import api from '../../services/api';
-import { Alert } from 'bootstrap';
+
 
 function CadastroEventos(){
     const [eventos, setEventos] = useState([]);    
@@ -26,7 +26,7 @@ function CadastroEventos(){
     }
 
     async function deletaEvento(eventJS, id){
-        eventJS.preventDefault();
+        eventJS.preventDefault(); // previne esse evento ser triggado quando a tela é contruída
         api
             .delete("/eventos/" + id)
             .then((response) => window.location.reload())
@@ -86,13 +86,13 @@ function CadastroEventos(){
             ( 
                 <div>
                     <div className="divExteriorCadastro">                
-                        <form className="divInterior2" onSubmit={salvarEvento}>
+                        <div className="divInterior2">
                             <h3>Cadastro</h3>
                             <input type="text" placeholder="Descrição" onChange={eventJS => setDescricao(eventJS.target.value)}></input>
                             <input type="datetime-local" placeholder="Data e hora de início" onChange={eventJS => setHoraInicio(eventJS.target.value)}></input>
                             <input type="datetime-local" placeholder="Data e hora de fim" onChange={eventJS => setHoraFim(eventJS.target.value)}></input>
-                            <button type="submit"><b>Salvar</b></button>
-                        </form>
+                            <button onClick={salvarEvento}><b>Salvar</b></button>
+                        </div>
                     </div>
 
                     <div className="divExteriorLista">
